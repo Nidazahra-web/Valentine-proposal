@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Valentine Proposal">
+
+    <link rel="apple-touch-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💕</text></svg>">
+
+    <title>Will You Be My Valentine?</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ff69b4, #ff1493);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            font-size: 1.2em;
+            padding: 20px 40px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+            -webkit-appearance: none;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        .yes {
+            background-color: #ff1493;
+            color: white;
+        }
+
+        .yes:hover,
+        .yes:active {
+            background-color: #c71585;
+        }
+
+        .no {
+            background-color: #dc143c;
+            color: white;
+        }
+
+        .no:hover,
+        .no:active {
+            background-color: #b22222;
+        }
+
+        .response {
+            font-size: 1.8em;
+            margin-top: 20px;
+            display: none;
+            padding: 10px;
+        }
+
+        .angry {
+            font-size: 3em;
+        }
+
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 3em;
+            }
+
+            button {
+                font-size: 1.5em;
+                padding: 15px 30px;
+            }
+
+            .buttons {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Will You Be My Valentine? 💕</h1>
+
+    <div class="buttons">
+        <button class="yes" onclick="sayYes()">Yes! ❤️</button>
+        <button class="no" onclick="sayNo()">No 😔</button>
+    </div>
+
+    <div id="response" class="response"></div>
+
+    <script>
+        function sayYes() {
+            document.getElementById('response').innerHTML = "Yay! You're the best! ❤️🎉";
+            document.getElementById('response').style.display = 'block';
+            document.querySelector('.buttons').style.display = 'none';
+        }
+
+        function sayNo() {
+            document.getElementById('response').innerHTML = "<span class='angry'>😠</span><br>Are you sure? Think again!";
+            document.getElementById('response').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
